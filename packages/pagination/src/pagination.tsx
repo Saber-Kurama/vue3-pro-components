@@ -2,8 +2,8 @@
  * @Author: Zhang Kai
  * @Date: 2021-10-25 17:29:24
  * @LastEditors: saber
- * @LastEditTime: 2021-11-04 20:50:50
- * @FilePath: /metricsx-standard-ui/src/components/Pagination/index.tsx
+ * @LastEditTime: 2021-11-04 21:53:21
+ * @FilePath: 
  */
 import { defineComponent, PropType, ref } from 'vue';
 import './index.scss';

@@ -28,6 +28,12 @@ importers:
   packages/pagination:
     specifiers: {}
 
+  packages/query-table:
+    specifiers:
+      '@digitforce/table': 0.0.1
+    dependencies:
+      '@digitforce/table': link:../table
+
   packages/table:
     specifiers:
       '@digitforce/pagination': 0.0.1

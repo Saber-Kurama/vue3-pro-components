@@ -1,7 +1,7 @@
 /*
  * @Author: Zhang Kai
  * @Date: 2021-11-04 13:55:25
- * @LastEditTime: 2021-11-04 20:47:23
+ * @LastEditTime: 2021-11-04 22:00:56
  * @LastEditors: saber
  * @Description: 带分页的表格
  */
@@ -30,6 +30,7 @@ export default defineComponent({
   },
   emits: ['pageCurrentChange', 'pageSizeChange'],
   setup(props, { emit, slots }) {
+    console.log('propspropspropsprops-----', props.data)
     // 创建table
     const renderTable = () => {
       // 支持 模板的语法
@@ -75,7 +76,7 @@ export default defineComponent({
     return () => {
       let { columns, pagination, ...restProps } = props;
       restProps = restProps ? restProps : {};
-      // console.log('Pagination', Pagination)
+      console.log('propspropspropsprops', props.data)
       return (
         <div class="table-container">
           <ElTable {...restProps}>{renderTable}</ElTable>
@@ -88,8 +89,6 @@ export default defineComponent({
               onSizeChange={(size: number) => emit('pageSizeChange', size)}
             />
           </div>
-          {/* <ElPagination background layout="prev, pager, next" total={1000}>
-        </ElPagination> */}
           <ElButton
             onClick={() => {
           
@@ -97,7 +96,6 @@ export default defineComponent({
           >
             asdasd
           </ElButton>
-          {/* <ElPagination pagination={}></ElPagination> */}
         </div>
       );
     };
