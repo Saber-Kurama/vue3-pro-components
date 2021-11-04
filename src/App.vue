@@ -1,16 +1,21 @@
+<!--
+ * @Author: saber
+ * @Date: 2021-11-04 11:58:43
+ * @LastEditTime: 2021-11-04 14:52:56
+ * @LastEditors: saber
+ * @Description: 
+-->
 <script setup lang="ts">
+import BasicTable from './demo/basic-table.vue';
+import CoustomTable from './demo/coustom-table.vue';
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
-import Table from './components/Table.vue';
-import SaberTab from './components/Tab';
+
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Table></Table>
-  <div>sadas</div>
-  <SaberTab></SaberTab>
+  <BasicTable></BasicTable>
+  <CoustomTable></CoustomTable>
 </template>
 
 <style>
