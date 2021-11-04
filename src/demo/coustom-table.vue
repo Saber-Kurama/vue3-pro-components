@@ -1,7 +1,7 @@
 <!--
  * @Author: saber
  * @Date: 2021-11-04 14:43:09
- * @LastEditTime: 2021-11-04 14:44:44
+ * @LastEditTime: 2021-11-04 15:48:52
  * @LastEditors: saber
  * @Description: 
 -->
@@ -10,11 +10,12 @@ import SaberTable from "../../packages/table/src/table";
 const columns = [
   {
     label: '名称',
-    prop: 'name'
+    prop: 'name',
   },
   {
     label: '日期',
-    prop: 'date'
+    prop: 'date',
+
   },
 ]
 const tableData = [
@@ -27,10 +28,13 @@ const tableData = [
 </script>
 <template>
   <div>
-    <SaberTable :data="tableData">
-      <template #columns>
-        <el-table-column label="名称" prop="name"></el-table-column>
-      </template>
+    <SaberTable :columns="columns" :data="tableData" >
+      <!-- <template #columns>
+        <el-table-column label="名称" prop="name"></el-table-column>       
+      </template> -->
+      <!-- <template #name>
+        <div>sss???</div>
+      </template> -->
     </SaberTable>
   </div>
 </template>

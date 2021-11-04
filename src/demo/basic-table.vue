@@ -1,16 +1,20 @@
 <!--
  * @Author: saber
  * @Date: 2021-11-04 14:09:38
- * @LastEditTime: 2021-11-04 14:42:29
+ * @LastEditTime: 2021-11-04 15:49:28
  * @LastEditors: saber
  * @Description: 
 -->
 <script lang="ts" setup>
+import { h } from "vue";
 import SaberTable from "../../packages/table/src/table";
 const columns = [
   {
     label: '名称',
-    prop: 'name'
+    prop: 'name',
+    render: () => {
+      return h('div', 'sss222')
+    }
   },
   {
     label: '日期',
