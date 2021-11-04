@@ -1,7 +1,7 @@
 <!--
  * @Author: saber
  * @Date: 2021-11-04 11:58:43
- * @LastEditTime: 2021-11-04 14:52:56
+ * @LastEditTime: 2021-11-04 20:08:38
  * @LastEditors: saber
  * @Description: 
 -->
@@ -15,7 +15,7 @@ import CoustomTable from './demo/coustom-table.vue';
 
 <template>
   <BasicTable></BasicTable>
-  <CoustomTable></CoustomTable>
+  <!-- <CoustomTable></CoustomTable> -->
 </template>
 
 <style>

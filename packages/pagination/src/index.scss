@@ -1,0 +1,13 @@
+.el-pagination.is-background {
+  .btn-prev,.btn-next,.el-pager li {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    :disabled {
+      background: #f7f9fc;
+    }
+  }
+  .el-icon{
+    margin: auto;
+  }
+}

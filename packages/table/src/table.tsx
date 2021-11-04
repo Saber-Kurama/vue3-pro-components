@@ -1,15 +1,18 @@
 /*
- * @Author: saber
+ * @Author: Zhang Kai
  * @Date: 2021-11-04 13:55:25
- * @LastEditTime: 2021-11-04 16:12:06
+ * @LastEditTime: 2021-11-04 20:47:23
  * @LastEditors: saber
  * @Description: 带分页的表格
  */
 
 import { ElButton, ElPagination, ElTable, ElTableColumn } from "element-plus";
+import SaberPagination from '@digitforce/pagination';
 import { PropType, toRefs } from "vue";
 import { defineComponent } from "vue";
 import { TableColumn } from "./interface";
+//TODO： 应该有自己的域 或者名字
+import "./index.scss";
 
 export default defineComponent({
   name: "SaberTable",
@@ -22,20 +25,20 @@ export default defineComponent({
       type: Array as PropType<TableColumn[]>,
       default: () => [],
     },
-    pagination: '',
+    pagination: ElPagination.props,
     ...ElTable.props,
   },
-  setup(props, { slots }) {
-    let { columns, ...restProps} = props;
-    restProps = restProps ? restProps : {};
-    console.log("columns", columns);
-    console.log("slots", slots);
+  emits: ['pageCurrentChange', 'pageSizeChange'],
+  setup(props, { emit, slots }) {
+    // 创建table
     const renderTable = () => {
+      // 支持 模板的语法
       if (slots.columns) {
         return slots.columns && slots.columns();
       }
-      <solts></solts>
+      let { columns = [] } = props;
       return columns.map((col: any, index: number) => {
+        // col 的其他参数 怎么传递呢？ 需要做什么转换吗
         // TODO: 没有做更好的校验
         if (col.render) {
           return (
@@ -44,16 +47,18 @@ export default defineComponent({
               prop={col.prop}
               key={col.key || index}
               v-slots={col.render}
+              width={col.width}
             ></ElTableColumn>
           );
         }
-        // if(col.soltName){
+        // TODO: 考虑支持 slotRenderName
+        // if(col.slotRenderName){
         //   return (
         //     <ElTableColumn
         //       label={col.label}
         //       prop={col.prop}
         //       key={col.key || index}
-        //       v-slots={slots[col.soltName] && slots[col.soltName]()}
+        //       v-slots={slots[col.slotRenderName] && slots[col.slotRenderName]()}
         //     ></ElTableColumn>
         //   );
         // }
@@ -62,16 +67,39 @@ export default defineComponent({
             label={col.label}
             prop={col.prop}
             key={col.key || index}
+            width={col.width}
           ></ElTableColumn>
         );
       });
     };
-    return () => (
-      <div>
-        <ElTable {...restProps}>{renderTable}</ElTable>
-        <ElButton>asdasd</ElButton>
-        {/* <ElPagination pagination={}></ElPagination> */}
-      </div>
-    );
+    return () => {
+      let { columns, pagination, ...restProps } = props;
+      restProps = restProps ? restProps : {};
+      // console.log('Pagination', Pagination)
+      return (
+        <div class="table-container">
+          <ElTable {...restProps}>{renderTable}</ElTable>
+          <div class="Pagination">
+            <SaberPagination
+              {...pagination}
+              onCurrentChange={(page: number) =>
+                emit('pageCurrentChange', page)
+              }
+              onSizeChange={(size: number) => emit('pageSizeChange', size)}
+            />
+          </div>
+          {/* <ElPagination background layout="prev, pager, next" total={1000}>
+        </ElPagination> */}
+          <ElButton
+            onClick={() => {
+          
+            }}
+          >
+            asdasd
+          </ElButton>
+          {/* <ElPagination pagination={}></ElPagination> */}
+        </div>
+      );
+    };
   },
 });
