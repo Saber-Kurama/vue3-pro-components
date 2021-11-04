@@ -8,14 +8,16 @@
 <script setup lang="ts">
 import BasicTable from './demo/basic-table.vue';
 import CoustomTable from './demo/coustom-table.vue';
+import BasicQueryHeader from './demo/basic-query-header.vue';
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 
 </script>
 
 <template>
-  <BasicTable></BasicTable>
+  <!-- <BasicTable></BasicTable> -->
   <!-- <CoustomTable></CoustomTable> -->
+  <BasicQueryHeader></BasicQueryHeader>
 </template>
 
 <style>

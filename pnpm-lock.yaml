@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@digitforce/table': workspace:0.0.1
+      '@element-plus/icons': ^0.0.11
       '@vitejs/plugin-vue': ^1.9.3
       '@vitejs/plugin-vue-jsx': ^1.2.0
       element-plus: ^1.2.0-beta.1
@@ -14,7 +15,8 @@ importers:
       vue-tsc: ^0.3.0
       vuepress: ^2.0.0-beta.27
     dependencies:
-      '@digitforce/table': link:packages/table
+      '@digitforce/table': link:packages/query-table
+      '@element-plus/icons': 0.0.11
       element-plus: 1.2.0-beta.1_vue@3.2.21
       vue: 3.2.21
     devDependencies:
@@ -28,11 +30,14 @@ importers:
   packages/pagination:
     specifiers: {}
 
+  packages/query-header:
+    specifiers: {}
+
   packages/query-table:
     specifiers:
       '@digitforce/table': 0.0.1
     dependencies:
-      '@digitforce/table': link:../table
+      '@digitforce/table': 'link:'
 
   packages/table:
     specifiers:
