@@ -1,7 +1,7 @@
 <!--
  * @Author: saber
  * @Date: 2021-11-05 10:03:26
- * @LastEditTime: 2021-11-05 15:21:28
+ * @LastEditTime: 2021-11-05 17:03:13
  * @LastEditors: saber
  * @Description: 
 -->
@@ -10,9 +10,12 @@
 import SbaerProTable from "@digitforce/pro-table";
 import SbaerQueryHeader from "@digitforce/query-header";
 import SbaerQueryTable from "@digitforce/query-table";
-import { reactive, watch } from "vue";
+import { reactive, ref, watch } from "vue";
+import { useQueryTable } from './useQueryTable'
+
+const querytableRef = ref(null);
 const queryData = reactive({
-  name: "",
+  name: "123",
   age: 0
 });
 
@@ -30,7 +33,7 @@ const columns = [
   },
 ];
 const requestData = async (query: any) => {
-  console.log("requestDatarequestData", query);
+  console.log("====requestDatarequestData", query);
   return {
     data: [
       {
@@ -48,26 +51,11 @@ const requestData = async (query: any) => {
     total: 10,
   };
 };
-let paramsProxy = reactive({
-  params: {}
-})
-const onSubmit = () => {
-  console.log('onSubmit====')
-  // params = reactive({...queryData})
-  paramsProxy.params = { ...queryData}
-  console.log(paramsProxy.params, 'paramsProxy.params')
-  
-}
-watch(() => paramsProxy.params, (newVal, preVal) => {
-  console.log('params???', newVal, preVal)
-}, {deep: true})
-// setTimeout(() => {
-//   paramsProxy.params.name = 'saber'
-// }, 10000)
+const { onSubmit, onReset, params} = useQueryTable(queryData)
 </script>
 <template>
   <div>
-    <SbaerQueryHeader @submit="onSubmit">
+    <SbaerQueryHeader @submit="onSubmit" @reset="onReset">
       <ElFormItem label="name">
         <ElInput v-model="queryData.name"></ElInput>
       </ElFormItem>
@@ -78,6 +66,6 @@ watch(() => paramsProxy.params, (newVal, preVal) => {
         <ElInput v-model="queryData.name"></ElInput>
       </ElFormItem>
     </SbaerQueryHeader>
-    <SbaerQueryTable :columns="columns" :request="requestData" :params="paramsProxy.params"></SbaerQueryTable>
+    <SbaerQueryTable ref="querytableRef" :columns="columns" :request="requestData" :params="params.params"></SbaerQueryTable>
   </div>
 </template>

@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2021-11-04 21:21:44
- * @LastEditTime: 2021-11-05 15:33:06
+ * @LastEditTime: 2021-11-05 17:38:39
  * @LastEditors: saber
  * @Description:
  */
@@ -19,7 +19,7 @@ export default defineComponent({
       type: Object,
     },
   },
-  setup(props) {
+  setup(props, { expose }) {
     console.log('???>>.xxx')
     // 表格数据
     const tableData = ref([]);
@@ -56,14 +56,40 @@ export default defineComponent({
     const pagination = {
       total: 10
     };
-    watch([pageNum, pageSize, props.params], (newVal, oldVal) => {
+    watch(() => props.params, () => {
+      console.log('-------')
+      if(pageNum.value === 1){
+        fetchData()
+      }else {
+        pageNum.value = 1;
+      }
+      // pageSize.value = 10
+      // fetchData()
+    }, {deep: true})
+    watch([pageNum, pageSize], (newVal, oldVal) => {
       console.log({ newVal, oldVal })
       fetchData()
+    })
+    // reload
+    const reload = () => {
+      console.log('刷新')
+    }
+    const reloadAndRest = () => {
+      console.log('重置刷新')
+    }
+
+    const reset = () => {
+      console.log('重置')
+    }
+    // 导出功能
+    expose({
+      reload,
+      reloadAndRest,
+      reset
     })
     return () => {
       return (
         <>
-          <div>asdasd</div>
           <SaberTable
             columns={columns}
             data={tableData.value}

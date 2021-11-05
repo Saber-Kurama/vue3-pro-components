@@ -11,6 +11,7 @@ importers:
       '@vitejs/plugin-vue': ^1.9.3
       '@vitejs/plugin-vue-jsx': ^1.2.0
       element-plus: ^1.2.0-beta.1
+      lodash-es: ^4.17.21
       typescript: ^4.4.3
       vite: ^2.6.4
       vue: ^3.2.16
@@ -22,6 +23,7 @@ importers:
       '@digitforce/query-table': link:packages/query-table
       '@element-plus/icons': 0.0.11
       element-plus: 1.2.0-beta.1_vue@3.2.21
+      lodash-es: 4.17.21
       vue: 3.2.21
     devDependencies:
       '@vitejs/plugin-vue': 1.9.4_vite@2.6.13
@@ -2884,6 +2886,10 @@ packages:
       emojis-list: 3.0.0
       json5: 2.2.0
     dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}

@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2021-11-05 09:44:18
- * @LastEditTime: 2021-11-05 14:57:33
+ * @LastEditTime: 2021-11-05 17:00:04
  * @LastEditors: saber
  * @Description:
  */
@@ -58,14 +58,19 @@ const SaberQueryHeader = defineComponent({
      * 偏移量
      */
     const calcSubBtnOffset = () => {
+      console.log('calcSubBtnOffsetcalcSubBtnOffset')
       const defaultShowItems = props.defaultShowItems || props.num - 1;
       const childrens = (slots.default && slots.default()) || [];
+      console.log('childrens.length', childrens.length)
       const total =
-        (advanced.value ? childrens.length : defaultShowItems) * span.value;
+        (advanced.value ? childrens.length + 1 : defaultShowItems) * span.value;
+        
       const remainder = total % 24;
+      console.log('remainderremainder', remainder)
       if (total < 24 || remainder === 0) {
         return 0;
       }
+      console.log('remainderremainder', remainder)
       return 24 - remainder;
     };
     const toggleAdvanced = () => {
