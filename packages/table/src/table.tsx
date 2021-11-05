@@ -1,7 +1,7 @@
 /*
  * @Author: Zhang Kai
  * @Date: 2021-11-04 13:55:25
- * @LastEditTime: 2021-11-04 22:00:56
+ * @LastEditTime: 2021-11-05 12:09:44
  * @LastEditors: saber
  * @Description: 带分页的表格
  */
@@ -25,7 +25,7 @@ export default defineComponent({
       type: Array as PropType<TableColumn[]>,
       default: () => [],
     },
-    pagination: ElPagination.props,
+    pagination: { ...ElPagination.props},
     ...ElTable.props,
   },
   emits: ['pageCurrentChange', 'pageSizeChange'],
@@ -94,7 +94,7 @@ export default defineComponent({
           
             }}
           >
-            asdasd
+            asdasdwww
           </ElButton>
         </div>
       );

@@ -1,5 +1,12 @@
+/*
+ * @Author: saber
+ * @Date: 2021-11-05 09:44:18
+ * @LastEditTime: 2021-11-05 14:57:33
+ * @LastEditors: saber
+ * @Description:
+ */
 import { defineComponent, reactive, ref, watch, computed } from "vue";
-import { ElRow, ElCol, ElButton, ElIcon } from "element-plus";
+import { ElForm, ElRow, ElCol, ElButton, ElIcon } from "element-plus";
 import { ArrowDown, ArrowUp } from "@element-plus/icons";
 
 const SaberQueryHeader = defineComponent({
@@ -16,7 +23,12 @@ const SaberQueryHeader = defineComponent({
       default: 3, // 默认只能是 3 或者 4
     },
   },
-  setup(props, { slots }) {
+  emits: [
+    "submit",
+    "reset"
+  ],
+  setup(props, { slots, emit }) {
+    console.log('slots', slots)
     // 是否展开
     const advanced = ref(false);
     // 每一个的 span 的值  栅格占位格数
@@ -27,7 +39,7 @@ const SaberQueryHeader = defineComponent({
      * @description 默认显示的插槽
      */
     const defaultShowSlots = computed(() => {
-        // TODO: 需要过滤掉 注释等一些组件 或者说只能要 type等于字符串的 这个
+      // TODO: 需要过滤掉 注释等一些组件 或者说只能要 type等于字符串的 这个
       const defaultShowItems = props.defaultShowItems || props.num - 1;
       const childrens = (slots.default && slots.default()) || [];
       return childrens.slice(0, defaultShowItems) || [];
@@ -48,12 +60,13 @@ const SaberQueryHeader = defineComponent({
     const calcSubBtnOffset = () => {
       const defaultShowItems = props.defaultShowItems || props.num - 1;
       const childrens = (slots.default && slots.default()) || [];
-      const total = (advanced.value ? childrens.length : defaultShowItems) * span.value
-      const remainder = total % 24
+      const total =
+        (advanced.value ? childrens.length : defaultShowItems) * span.value;
+      const remainder = total % 24;
       if (total < 24 || remainder === 0) {
-        return 0
+        return 0;
       }
-      return 24 - remainder
+      return 24 - remainder;
     };
     const toggleAdvanced = () => {
       advanced.value = !advanced.value;
@@ -64,40 +77,51 @@ const SaberQueryHeader = defineComponent({
     // display: flex;
     return () => {
       return (
-        <ElRow gutter={24}>
-          {defaultShowSlots.value.map((vnode, index) => {
-            return (
-              <ElCol md={{ span: span.value }} key={index + "defalu"}>
-                {vnode}
-              </ElCol>
-            );
-          })}
-          {advanced.value && advancedShowSlots.value.map((vnode, index) => {
-            return (
-              <ElCol md={{ span: span.value }} key={index + "advance"}>
-                {vnode}
-              </ElCol>
-            );
-          })}
-          <ElCol md={{ span: span.value, offset: calcSubBtnOffset() }}>
-            <ElButton>查询</ElButton>
-            <ElButton>重置</ElButton>
-            {advancedShowSlots.value.length ? (
-              <a
-                style={{
-                  width: "52px",
-                  marginLeft: "8px",
-                  textAlign: "center",
-                  color: "blue",
-                }}
-                onClick={toggleAdvanced}
-              >
-                {advanced.value ? "收缩" : "展开"}
-                <ElIcon>{advanced.value ? <ArrowUp /> : <ArrowDown />}</ElIcon>
-              </a>
-            ): ''}
-          </ElCol>
-        </ElRow>
+        <ElForm inline={true}>
+          <ElRow gutter={24}>
+            {defaultShowSlots.value.map((vnode, index) => {
+              return (
+                <ElCol md={{ span: span.value }} key={index + "defalu"}>
+                  {vnode}
+                </ElCol>
+              );
+            })}
+            {advanced.value &&
+              advancedShowSlots.value.map((vnode, index) => {
+                return (
+                  <ElCol md={{ span: span.value }} key={index + "advance"}>
+                    {vnode}
+                  </ElCol>
+                );
+              })}
+            <ElCol md={{ span: span.value, offset: calcSubBtnOffset() }}>
+              <ElButton onClick={() => {
+                emit('submit')
+              }}>查询</ElButton>
+              <ElButton onClick={() => {
+                emit('reset')
+              }}>重置</ElButton>
+              {advancedShowSlots.value.length ? (
+                <a
+                  style={{
+                    width: "52px",
+                    marginLeft: "8px",
+                    textAlign: "center",
+                    color: "blue",
+                  }}
+                  onClick={toggleAdvanced}
+                >
+                  {advanced.value ? "收缩" : "展开"}
+                  <ElIcon>
+                    {advanced.value ? <ArrowUp /> : <ArrowDown />}
+                  </ElIcon>
+                </a>
+              ) : (
+                ""
+              )}
+            </ElCol>
+          </ElRow>
+        </ElForm>
       );
     };
   },

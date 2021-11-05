@@ -18,7 +18,9 @@
     "@element-plus/icons": "^0.0.11",
     "element-plus": "^1.2.0-beta.1",
     "vue": "^3.2.16",
-    "@digitforce/table": "workspace:0.0.1"
+    "@digitforce/query-header": "workspace:0.0.1",
+    "@digitforce/query-table": "workspace:0.0.1",
+    "@digitforce/pro-table": "workspace:0.0.1"
   },
   "devDependencies": {
     "vuepress": "^2.0.0-beta.27",

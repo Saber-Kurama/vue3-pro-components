@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2021-11-04 21:21:44
- * @LastEditTime: 2021-11-04 22:24:18
+ * @LastEditTime: 2021-11-05 15:33:06
  * @LastEditors: saber
  * @Description:
  */
@@ -53,22 +53,6 @@ export default defineComponent({
         prop: "date",
       },
     ];
-    let tableData1 = reactive([
-      {
-        date: "2016-05-03",
-        name: "Tom",
-        address: "No. 189, Grove St, Los Angeles",
-      },
-    ]);
-    setTimeout(() => {
-      tableData1 = [
-        {
-          date: "2016-05-03",
-          name: "Tomssssss",
-          address: "No. 189, Grove St, Los Angeles",
-        },
-      ] 
-    }, 3000)
     const pagination = {
       total: 10
     };

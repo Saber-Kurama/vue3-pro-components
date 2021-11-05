@@ -1,5 +1,5 @@
 {
-  "name": "@digitforce/table",
+  "name": "@digitforce/pro-table",
   "version": "0.0.1",
   "description": "",
   "main": "src/index.ts",
@@ -8,7 +8,8 @@
     "pnpm": ">=3"
   },
   "dependencies": {
-    "@digitforce/pagination": "0.0.1"
+    "@digitforce/query-header": "0.0.1",
+    "@digitforce/query-table": "0.0.1"
   },
   "devDependencies": {}
 }

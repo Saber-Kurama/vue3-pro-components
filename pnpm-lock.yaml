@@ -4,7 +4,9 @@ importers:
 
   .:
     specifiers:
-      '@digitforce/table': workspace:0.0.1
+      '@digitforce/pro-table': workspace:0.0.1
+      '@digitforce/query-header': workspace:0.0.1
+      '@digitforce/query-table': workspace:0.0.1
       '@element-plus/icons': ^0.0.11
       '@vitejs/plugin-vue': ^1.9.3
       '@vitejs/plugin-vue-jsx': ^1.2.0
@@ -15,7 +17,9 @@ importers:
       vue-tsc: ^0.3.0
       vuepress: ^2.0.0-beta.27
     dependencies:
-      '@digitforce/table': link:packages/query-table
+      '@digitforce/pro-table': link:packages/pro-table
+      '@digitforce/query-header': link:packages/query-header
+      '@digitforce/query-table': link:packages/query-table
       '@element-plus/icons': 0.0.11
       element-plus: 1.2.0-beta.1_vue@3.2.21
       vue: 3.2.21
@@ -30,6 +34,14 @@ importers:
   packages/pagination:
     specifiers: {}
 
+  packages/pro-table:
+    specifiers:
+      '@digitforce/query-header': 0.0.1
+      '@digitforce/query-table': 0.0.1
+    dependencies:
+      '@digitforce/query-header': link:../query-header
+      '@digitforce/query-table': link:../query-table
+
   packages/query-header:
     specifiers: {}
 
@@ -37,7 +49,7 @@ importers:
     specifiers:
       '@digitforce/table': 0.0.1
     dependencies:
-      '@digitforce/table': 'link:'
+      '@digitforce/table': link:../table
 
   packages/table:
     specifiers:
@@ -703,14 +715,14 @@ packages:
       esbuild-loader: 2.16.0_webpack@5.61.0
       express: 4.17.1
       html-webpack-plugin: 5.5.0_webpack@5.61.0
-      mini-css-extract-plugin: 2.4.3_webpack@5.61.0
+      mini-css-extract-plugin: 2.4.4_webpack@5.61.0
       portfinder: 1.0.28
       postcss: 8.3.11
       postcss-csso: 5.0.1_postcss@8.3.11
       postcss-loader: 6.2.0_postcss@8.3.11+webpack@5.61.0
       style-loader: 3.3.1_webpack@5.61.0
       vue: 3.2.21
-      vue-loader: 16.8.2_webpack@5.61.0
+      vue-loader: 16.8.3_webpack@5.61.0
       vue-router: 4.0.12_vue@3.2.21
       webpack: 5.61.0
       webpack-chain: 6.5.1
@@ -901,7 +913,7 @@ packages:
       '@vuepress/plugin-theme-data': 2.0.0-beta.27
       '@vuepress/shared': 2.0.0-beta.27
       '@vuepress/utils': 2.0.0-beta.27
-      '@vueuse/core': 6.7.5_vue@3.2.21
+      '@vueuse/core': 6.7.6_vue@3.2.21
       sass: 1.43.4
       sass-loader: 12.3.0_sass@1.43.4
       vue: 3.2.21
@@ -932,8 +944,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vueuse/core/6.7.5_vue@3.2.21:
-    resolution: {integrity: sha512-zgWai0i38TbfWGMVs1ybyEEdwwhjjMloQflRTMU0+pTmp3kEtQTDiVZiOrr758s+yRdr2OQiMQ323dyiKgKMFQ==}
+  /@vueuse/core/6.7.6_vue@3.2.21:
+    resolution: {integrity: sha512-oVyqARXnTvhf4m6xf/sHw+SNJWcRYJn8+L4TZTFBU9POf9GIzBN7iHD2Oc4K4rTWXGQzXfoFHgbrXyeMFCRoqA==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
@@ -943,12 +955,12 @@ packages:
       vue:
         optional: true
     dependencies:
-      '@vueuse/shared': 6.7.5_vue@3.2.21
+      '@vueuse/shared': 6.7.6_vue@3.2.21
       vue: 3.2.21
       vue-demi: 0.12.1_vue@3.2.21
 
-  /@vueuse/shared/6.7.5_vue@3.2.21:
-    resolution: {integrity: sha512-wUDMPTGUSTYsbiftKq7dYLKD2i3n0m8utbHBCyoxdyeKsmtQGIM2/XeeXjtALB7UXD6rqPsVgCMepNrPPt8zvw==}
+  /@vueuse/shared/6.7.6_vue@3.2.21:
+    resolution: {integrity: sha512-MfzTKkFK63PcjDdTpJRuJqylpyUdXpic9ueTRcgpPizqFpoYIuI6DkdYjub2Ch5+OYYhVnCqe8ynW6WzYo7DGQ==}
     peerDependencies:
       '@vue/composition-api': ^1.1.0
       vue: ^2.6.0 || ^3.2.0
@@ -1215,7 +1227,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.17.6
-      caniuse-lite: 1.0.30001276
+      caniuse-lite: 1.0.30001278
       fraction.js: 4.1.1
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1309,8 +1321,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001276
-      electron-to-chromium: 1.3.888
+      caniuse-lite: 1.0.30001278
+      electron-to-chromium: 1.3.889
       escalade: 3.1.1
       node-releases: 2.0.1
       picocolors: 1.0.0
@@ -1370,8 +1382,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /caniuse-lite/1.0.30001276:
-    resolution: {integrity: sha512-psUNoaG1ilknZPxi8HuhQWobuhLqtYSRUxplfVkEJdgZNB9TETVYGSBtv4YyfAdGvE6gn2eb0ztiXqHoWJcGnw==}
+  /caniuse-lite/1.0.30001278:
+    resolution: {integrity: sha512-mpF9KeH8u5cMoEmIic/cr7PNS+F5LWBk0t2ekGT60lFf0Wq+n9LspAj0g3P+o7DQhD3sUdlMln4YFAWhFYn9jg==}
     dev: true
 
   /chalk/2.4.2:
@@ -1816,8 +1828,8 @@ packages:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: true
 
-  /electron-to-chromium/1.3.888:
-    resolution: {integrity: sha512-5iD1zgyPpFER4kJ716VsA4MxQ6x405dxdFNCEK2mITL075VHO5ResjY0xzQUZguCww/KlBxCA6JmBA9sDt1PRw==}
+  /electron-to-chromium/1.3.889:
+    resolution: {integrity: sha512-suEUoPTD1mExjL9TdmH7cvEiWJVM2oEiAi+Y1p0QKxI2HcRlT44qDTP2c1aZmVwRemIPYOpxmV7CxQCOWcm4XQ==}
     dev: true
 
   /element-plus/1.2.0-beta.1_vue@3.2.21:
@@ -1827,7 +1839,7 @@ packages:
     dependencies:
       '@element-plus/icons': 0.0.11
       '@popperjs/core': 2.10.2
-      '@vueuse/core': 6.7.5_vue@3.2.21
+      '@vueuse/core': 6.7.6_vue@3.2.21
       async-validator: 4.0.7
       dayjs: 1.10.7
       lodash: 4.17.21
@@ -1983,7 +1995,7 @@ packages:
       esbuild: 0.13.12
       joycon: 3.0.1
       json5: 2.2.0
-      loader-utils: 2.0.1
+      loader-utils: 2.0.2
       tapable: 2.2.1
       type-fest: 1.4.0
       webpack: 5.61.0
@@ -2864,8 +2876,8 @@ packages:
     engines: {node: '>=6.11.5'}
     dev: true
 
-  /loader-utils/2.0.1:
-    resolution: {integrity: sha512-g4miPa9uUrZz4iElkaVJgDFwKJGh8aQGM7pUL4ejXl6cu7kSb30seQOVGNMP6sW8j7DW77X68hJZ+GM7UGhXeQ==}
+  /loader-utils/2.0.2:
+    resolution: {integrity: sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==}
     engines: {node: '>=8.9.0'}
     dependencies:
       big.js: 5.2.2
@@ -3008,8 +3020,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /mini-css-extract-plugin/2.4.3_webpack@5.61.0:
-    resolution: {integrity: sha512-zekavl9mZuGyk7COjsfFY/f655AX61EKE0AthXPrmDk+oZyjZ9WzO4WPjXnnO9xl8obK2kmM6rAQrBEmk+WK1g==}
+  /mini-css-extract-plugin/2.4.4_webpack@5.61.0:
+    resolution: {integrity: sha512-UJ+aNuFQaQaECu7AamlWOBLj2cJ6XSGU4zNiqXeZ7lZLe5VD0DoSPWFbWArXueo+6FZVbgHzpX9lUIaBIDLuYg==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -4298,14 +4310,14 @@ packages:
     dependencies:
       vue: 3.2.21
 
-  /vue-loader/16.8.2_webpack@5.61.0:
-    resolution: {integrity: sha512-Nkq+z9mAsMEK+qkXgK+9Ia7D8w9uu9j4ut0IMT5coMfux3rCgIp1QBB1CYwY0M34A1nRMSONEaWXxAAw6xSl/Q==}
+  /vue-loader/16.8.3_webpack@5.61.0:
+    resolution: {integrity: sha512-7vKN45IxsKxe5GcVCbc2qFU5aWzyiLrYJyUuMz4BQLKctCj/fmCa0w6fGiiQ2cLFetNcek1ppGJQDCup0c1hpA==}
     peerDependencies:
       webpack: ^4.1.0 || ^5.0.0-0
     dependencies:
       chalk: 4.1.2
       hash-sum: 2.0.0
-      loader-utils: 2.0.1
+      loader-utils: 2.0.2
       webpack: 5.61.0
     dev: true
 
