@@ -2,8 +2,8 @@
  * @Author: Zhang Kai
  * @Date: 2021-11-05 20:58:49
  * @LastEditors: Zhang Kai
- * @LastEditTime: 2021-11-08 10:46:47
- * @FilePath: /metricsx-standard-ui/src/components/SearchForm/index.tsx
+ * @LastEditTime: 2021-11-08 11:16:08
+ * @FilePath: /vue3-pro-components/packages/query-header/src/SearchForm.tsx
  */
 import { defineComponent, reactive, ref, watch, computed } from 'vue';
 import { ElForm, ElRow, ElCol, ElButton, ElIcon } from 'element-plus';
@@ -137,21 +137,12 @@ const SaberQueryHeader = defineComponent({
               </ElButton>
 
               {advancedShowSlots.value.length ? (
-                <a
-                  style={{
-                    width: '52px',
-                    marginLeft: '8px',
-                    textAlign: 'center',
-                    color: '#396EFE',
-                    cursor: 'pointer'
-                  }}
-                  onClick={toggleAdvanced}
-                >
+                <el-button onClick={toggleAdvanced} type="text">
                   {advanced.value ? '收缩' : '展开'}
-                  <ElIcon>
+                  <el-icon color="#396EFE">
                     {advanced.value ? <ArrowUp /> : <ArrowDown />}
-                  </ElIcon>
-                </a>
+                  </el-icon>
+                </el-button>
               ) : (
                 ''
               )}
