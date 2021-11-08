@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2021-11-04 21:21:44
- * @LastEditTime: 2021-11-08 21:55:53
+ * @LastEditTime: 2021-11-08 22:07:27
  * @LastEditors: saber
  * @Description:
  */
@@ -43,13 +43,14 @@ export default defineComponent({
         console.log('datadata', data)
         if (success) {
           tableData.value = data;
+          pagination.total = total;
         }
       }
     };
     fetchData();
-    const pagination = {
-      total: 10
-    };
+    const pagination = reactive({
+      total: 0
+    });
     watch(() => props.params, () => {
       console.log('-------')
       if(pageNum.value === 1){
