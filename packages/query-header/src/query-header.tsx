@@ -2,7 +2,7 @@
  * @Author: Zhang Kai
  * @Date: 2021-11-05 20:58:49
  * @LastEditors: saber
- * @LastEditTime: 2021-11-08 18:00:19
+ * @LastEditTime: 2021-11-08 20:14:28
  * @FilePath: /vue3-pro-components/packages/query-header/src/SearchForm.tsx
  */
 import { defineComponent, reactive, ref, watch, computed, watchEffect } from 'vue';
@@ -60,15 +60,12 @@ const SaberQueryHeader = defineComponent({
      * 偏移量
      */
     const calcSubBtnOffset = () => {
-      console.log('calcSubBtnOffsetcalcSubBtnOffset');
       const defaultShowItems = props.defaultShowItems || props.num - 1;
       const childrens = (slots.default && slots.default()) || [];
-      console.log('childrens.length', childrens.length);
       const total =
         (advanced.value ? childrens.length + 1 : defaultShowItems) * span.value;
 
       const remainder = total % 24;
-      console.log('remainderremainder', remainder);
       if (total < 24 || remainder === 0) {
         return 0;
       }
@@ -97,7 +94,7 @@ const SaberQueryHeader = defineComponent({
           ref={formRef}
           label-position={'right'}
           model={model}
-          label-width="100px"
+          labelWidth="100px"
         >
           <ElRow gutter={20}>
             {defaultShowSlots.value.map((vnode, index) => {

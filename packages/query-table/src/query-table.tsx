@@ -1,13 +1,14 @@
 /*
  * @Author: saber
  * @Date: 2021-11-04 21:21:44
- * @LastEditTime: 2021-11-05 17:38:39
+ * @LastEditTime: 2021-11-08 21:55:53
  * @LastEditors: saber
  * @Description:
  */
 
-import { defineComponent, reactive, ref, watch } from "vue";
+import { defineComponent, PropType, reactive, ref, watch } from "vue";
 import SaberTable from "@digitforce/table";
+import { TableColumn } from "@digitforce/table/src/interface";
 
 export default defineComponent({
   name: "SaberQueryTable",
@@ -15,12 +16,15 @@ export default defineComponent({
     params: {
       type: Object,
     },
+    columns: {
+      type: Array as PropType<TableColumn[]>,
+      default: () => [],
+    },
     request: {
       type: Object,
     },
   },
   setup(props, { expose }) {
-    console.log('???>>.xxx')
     // 表格数据
     const tableData = ref([]);
     // 当前页数
@@ -43,16 +47,6 @@ export default defineComponent({
       }
     };
     fetchData();
-    const columns = [
-      {
-        label: "名称",
-        prop: "name",
-      },
-      {
-        label: "日期",
-        prop: "date",
-      },
-    ];
     const pagination = {
       total: 10
     };
@@ -91,7 +85,7 @@ export default defineComponent({
       return (
         <>
           <SaberTable
-            columns={columns}
+            columns={props.columns}
             data={tableData.value}
             pagination={pagination}
             onPageSizeChange={(size: number) => {

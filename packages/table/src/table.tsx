@@ -1,7 +1,7 @@
 /*
  * @Author: Zhang Kai
  * @Date: 2021-11-04 13:55:25
- * @LastEditTime: 2021-11-05 12:09:44
+ * @LastEditTime: 2021-11-08 20:28:54
  * @LastEditors: saber
  * @Description: 带分页的表格
  */
@@ -88,14 +88,7 @@ export default defineComponent({
               }
               onSizeChange={(size: number) => emit('pageSizeChange', size)}
             />
-          </div>
-          <ElButton
-            onClick={() => {
-          
-            }}
-          >
-            asdasdwww
-          </ElButton>
+          </div> 
         </div>
       );
     };
