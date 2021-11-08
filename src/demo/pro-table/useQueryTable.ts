@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2021-11-05 16:17:08
- * @LastEditTime: 2021-11-05 17:02:43
+ * @LastEditTime: 2021-11-08 14:45:25
  * @LastEditors: saber
  * @Description: 
  */
@@ -10,6 +10,7 @@ import { reactive, ref, unref } from "vue"
 import cloneDeep from 'lodash-es/cloneDeep';
 
 export const useQueryTable = (queryData: any) => {
+  const formRef = ref()
   const initialModel = cloneDeep(unref(queryData));
   let paramsProxy = reactive({
     params: initialModel
@@ -21,14 +22,19 @@ export const useQueryTable = (queryData: any) => {
   }
   const onReset = () => {
     console.log('??>>>>')
-    Object.assign(unref(queryData), {
-      ...cloneDeep(initialModel)
-    });
+    // Object.assign(unref(queryData), {
+    //   ...cloneDeep(initialModel)
+    // });
+    console.log('formRef.valueformRef.value', formRef)
+    //@ts-ignore
+    formRef.value?.resetFields();
+    console.log('queryDataqueryDataqueryDataqueryData', queryData)
     paramsProxy.params = { ...queryData}
   }
   return {
     onSubmit,
     onReset,
+    formRef,
     params: paramsProxy
   }
 }

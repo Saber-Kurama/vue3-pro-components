@@ -1,8 +1,8 @@
 /*
  * @Author: Zhang Kai
  * @Date: 2021-11-05 20:58:49
- * @LastEditors: Zhang Kai
- * @LastEditTime: 2021-11-08 11:16:08
+ * @LastEditors: saber
+ * @LastEditTime: 2021-11-08 15:22:02
  * @FilePath: /vue3-pro-components/packages/query-header/src/SearchForm.tsx
  */
 import { defineComponent, reactive, ref, watch, computed } from 'vue';
@@ -99,7 +99,7 @@ const SaberQueryHeader = defineComponent({
               return (
                 <ElCol
                   md={{ span: span.value, offset: 0 }}
-                  key={index + 'defalu'}
+                  key={index + 'defalut'}
                 >
                   {vnode}
                 </ElCol>
@@ -130,6 +130,7 @@ const SaberQueryHeader = defineComponent({
               <ElButton
                 type="primary"
                 onClick={() => {
+                  console.log('formRefformRef', formRef)
                   emit('submit');
                 }}
               >

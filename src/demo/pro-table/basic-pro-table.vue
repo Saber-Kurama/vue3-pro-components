@@ -1,7 +1,7 @@
 <!--
  * @Author: saber
  * @Date: 2021-11-05 10:03:26
- * @LastEditTime: 2021-11-05 17:03:13
+ * @LastEditTime: 2021-11-08 17:43:45
  * @LastEditors: saber
  * @Description: 
 -->
@@ -12,6 +12,7 @@ import SbaerQueryHeader from "@digitforce/query-header";
 import SbaerQueryTable from "@digitforce/query-table";
 import { reactive, ref, watch } from "vue";
 import { useQueryTable } from './useQueryTable'
+import SearchForm  from '../../../packages/query-header/src/SearchForm'
 
 const querytableRef = ref(null);
 const queryData = reactive({
@@ -51,18 +52,24 @@ const requestData = async (query: any) => {
     total: 10,
   };
 };
-const { onSubmit, onReset, params} = useQueryTable(queryData)
+// TODO: 目前先这样 后续修改成通过传递ref的方式
+const { onSubmit, onReset, params, formRef} = useQueryTable(queryData)
+const formRef1 = ref()
+const onS = () => {
+  console.log('????/', formRef1.value.formRef)
+}
+console.log('SearchForm', SearchForm)
 </script>
 <template>
   <div>
-    <SbaerQueryHeader @submit="onSubmit" @reset="onReset">
-      <ElFormItem label="name">
+    <SbaerQueryHeader ref="formRef1" @submit="onS" @reset="onReset" :model="queryData">
+      <ElFormItem label="name" prop='name'>
         <ElInput v-model="queryData.name"></ElInput>
       </ElFormItem>
-      <ElFormItem label="name1">
+      <ElFormItem label="name1" prop='name'>
         <ElInput v-model="queryData.name"></ElInput>
       </ElFormItem>
-      <ElFormItem label="name1">
+      <ElFormItem label="name1" prop='name'>
         <ElInput v-model="queryData.name"></ElInput>
       </ElFormItem>
     </SbaerQueryHeader>
