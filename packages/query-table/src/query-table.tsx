@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2021-11-04 21:21:44
- * @LastEditTime: 2021-11-08 22:07:27
+ * @LastEditTime: 2021-11-09 15:35:49
  * @LastEditors: saber
  * @Description:
  */
@@ -24,7 +24,7 @@ export default defineComponent({
       type: Object,
     },
   },
-  setup(props, { expose }) {
+  setup(props, { expose, slots }) {
     // 表格数据
     const tableData = ref([]);
     // 当前页数
@@ -95,6 +95,7 @@ export default defineComponent({
             onPageCurrentChange={(page: number) => {
               pageNum.value = page
             }}
+            v-slots={slots}
           ></SaberTable>
         </>
       );

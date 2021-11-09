@@ -1,13 +1,13 @@
 /*
  * @Author: Zhang Kai
  * @Date: 2021-11-04 13:55:25
- * @LastEditTime: 2021-11-08 20:28:54
+ * @LastEditTime: 2021-11-09 15:50:20
  * @LastEditors: saber
  * @Description: 带分页的表格
  */
 
 import { ElButton, ElPagination, ElTable, ElTableColumn } from "element-plus";
-import SaberPagination from '@digitforce/pagination';
+import SaberPagination from "@digitforce/pagination";
 import { PropType, toRefs } from "vue";
 import { defineComponent } from "vue";
 import { TableColumn } from "./interface";
@@ -25,12 +25,12 @@ export default defineComponent({
       type: Array as PropType<TableColumn[]>,
       default: () => [],
     },
-    pagination: { ...ElPagination.props},
+    pagination: { ...ElPagination.props },
     ...ElTable.props,
   },
-  emits: ['pageCurrentChange', 'pageSizeChange'],
+  emits: ["pageCurrentChange", "pageSizeChange"],
   setup(props, { emit, slots }) {
-    console.log('propspropspropsprops-----', props.data)
+    console.log("propspropspropsprops-----", props.data);
     // 创建table
     const renderTable = () => {
       // 支持 模板的语法
@@ -53,16 +53,16 @@ export default defineComponent({
           );
         }
         // TODO: 考虑支持 slotRenderName
-        // if(col.slotRenderName){
-        //   return (
-        //     <ElTableColumn
-        //       label={col.label}
-        //       prop={col.prop}
-        //       key={col.key || index}
-        //       v-slots={slots[col.slotRenderName] && slots[col.slotRenderName]()}
-        //     ></ElTableColumn>
-        //   );
-        // }
+        if (col.slotRenderName) {
+          return (
+            <ElTableColumn
+              label={col.label}
+              prop={col.prop}
+              key={col.key || index}
+              v-slots={{ default: slots[col.slotRenderName] }}
+            ></ElTableColumn>
+          );
+        }
         return (
           <ElTableColumn
             label={col.label}
@@ -76,7 +76,7 @@ export default defineComponent({
     return () => {
       let { columns, pagination, ...restProps } = props;
       restProps = restProps ? restProps : {};
-      console.log('propspropspropsprops', props.data)
+      console.log("propspropspropsprops", props.data);
       return (
         <div class="table-container">
           <ElTable {...restProps}>{renderTable}</ElTable>
@@ -84,11 +84,11 @@ export default defineComponent({
             <SaberPagination
               {...pagination}
               onCurrentChange={(page: number) =>
-                emit('pageCurrentChange', page)
+                emit("pageCurrentChange", page)
               }
-              onSizeChange={(size: number) => emit('pageSizeChange', size)}
+              onSizeChange={(size: number) => emit("pageSizeChange", size)}
             />
-          </div> 
+          </div>
         </div>
       );
     };
