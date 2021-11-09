@@ -1,7 +1,7 @@
 /*
  * @Author: Zhang Kai
  * @Date: 2021-11-04 13:55:25
- * @LastEditTime: 2021-11-09 15:50:20
+ * @LastEditTime: 2021-11-09 21:41:34
  * @LastEditors: saber
  * @Description: 带分页的表格
  */
@@ -30,7 +30,6 @@ export default defineComponent({
   },
   emits: ["pageCurrentChange", "pageSizeChange"],
   setup(props, { emit, slots }) {
-    console.log("propspropspropsprops-----", props.data);
     // 创建table
     const renderTable = () => {
       // 支持 模板的语法

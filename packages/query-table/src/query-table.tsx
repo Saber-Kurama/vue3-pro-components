@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2021-11-04 21:21:44
- * @LastEditTime: 2021-11-09 15:35:49
+ * @LastEditTime: 2021-11-09 21:44:24
  * @LastEditors: saber
  * @Description:
  */
@@ -66,11 +66,19 @@ export default defineComponent({
       fetchData()
     })
     // reload
+    // 只是刷新 不修改任何
     const reload = () => {
       console.log('刷新')
+      fetchData()
     }
+    // 重置刷新的话就是 到第一页
     const reloadAndRest = () => {
       console.log('重置刷新')
+      if(pageNum.value === 1){
+        fetchData()
+      }else {
+        pageNum.value = 1;
+      }
     }
 
     const reset = () => {
