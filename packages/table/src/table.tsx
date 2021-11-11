@@ -1,7 +1,7 @@
 /*
  * @Author: Zhang Kai
  * @Date: 2021-11-04 13:55:25
- * @LastEditTime: 2021-11-10 18:44:07
+ * @LastEditTime: 2021-11-11 17:45:34
  * @LastEditors: chengyanyin
  * @Description: 带分页的表格
  */
@@ -40,19 +40,37 @@ export default defineComponent({
       if (slots.columns) {
         return slots.columns && slots.columns();
       }
+      const { rowKey } = props;
       let { columns = [] } = props;
       return columns.map((col: any, index: number) => {
         // col 的其他参数 怎么传递呢？ 需要做什么转换吗
         // TODO: 没有做更好的校验
         const { render, slotRenderName, ...otherCol } = col;
+        const key = col[rowKey] || col.key || col.prop || index; // 每一个 columns 的 key
+        const newCol = { ...otherCol, key }; // 一个新的 col
         if (col.render) {
-          return <ElTableColumn {...otherCol} v-slots={col.render}></ElTableColumn>;
+          newCol.slots = col.render;
         }
         // TODO: 考虑支持 slotRenderName
         if (col.slotRenderName) {
-          return <ElTableColumn {...otherCol} v-slots={{ default: slots[col.slotRenderName] }}></ElTableColumn>;
+          newCol.slots = { default: slots[col.slotRenderName] };
         }
-        return <ElTableColumn {...otherCol}></ElTableColumn>;
+        // 支持 prop 传参为 string[]
+        if (col.prop instanceof Array) {
+          newCol.prop = col.prop.join('.');
+          newCol.slots = {
+            default: ({ row }: any) => {
+              let current = row;
+              for (let i = 0; i < col.prop.length; i++) {
+                if (!current) return null;
+                const prop = col.prop[i];
+                current = current[prop];
+              }
+              return current;
+            },
+          };
+        }
+        return <ElTableColumn {...newCol} v-slots={newCol.slots}></ElTableColumn>;
       });
     };
     return () => {
