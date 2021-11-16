@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2021-11-04 21:21:44
- * @LastEditTime: 2021-11-09 21:44:24
+ * @LastEditTime: 2021-11-16 20:24:49
  * @LastEditors: saber
  * @Description:
  */
@@ -49,10 +49,10 @@ export default defineComponent({
     };
     fetchData();
     const pagination = reactive({
-      total: 0
+      total: 0,
+      currentPage: pageNum
     });
     watch(() => props.params, () => {
-      console.log('-------')
       if(pageNum.value === 1){
         fetchData()
       }else {
