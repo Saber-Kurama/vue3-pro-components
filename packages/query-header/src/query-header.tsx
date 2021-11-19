@@ -2,7 +2,7 @@
  * @Author: Zhang Kai
  * @Date: 2021-11-05 20:58:49
  * @LastEditors: saber
- * @LastEditTime: 2021-11-08 20:14:28
+ * @LastEditTime: 2021-11-19 17:09:16
  * @FilePath: /vue3-pro-components/packages/query-header/src/SearchForm.tsx
  */
 import { defineComponent, reactive, ref, watch, computed, watchEffect } from 'vue';
@@ -138,7 +138,7 @@ const SaberQueryHeader = defineComponent({
 
               {advancedShowSlots.value.length ? (
                 <ElButton onClick={toggleAdvanced} type="text">
-                  {advanced.value ? '收缩' : '展开'}
+                  {advanced.value ? '收起' : '展开'}
                   <ElIcon color="#396EFE">
                     {advanced.value ? <ArrowUp /> : <ArrowDown />}
                   </ElIcon>
