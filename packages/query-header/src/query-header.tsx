@@ -2,12 +2,13 @@
  * @Author: Zhang Kai
  * @Date: 2021-11-05 20:58:49
  * @LastEditors: saber
- * @LastEditTime: 2021-11-19 17:09:16
+ * @LastEditTime: 2021-11-21 18:13:06
  * @FilePath: /vue3-pro-components/packages/query-header/src/SearchForm.tsx
  */
 import { defineComponent, reactive, ref, watch, computed, watchEffect } from 'vue';
 import { ElForm, ElRow, ElCol, ElButton, ElIcon } from 'element-plus';
 import { ArrowDown, ArrowUp } from '@element-plus/icons';
+import { filterEmpty } from '@digitforce/vue-utils'; 
 
 const SaberQueryHeader = defineComponent({
   name: 'SaberQueryHeader',
@@ -37,14 +38,17 @@ const SaberQueryHeader = defineComponent({
     const span = computed(() => {
       return 24 / props.num;
     });
+
+    const childrens = computed(() => {
+      return filterEmpty(slots.default && slots.default() || [])
+    })
     /**
      * @description 默认显示的插槽
      */
     const defaultShowSlots = computed(() => {
       // TODO: 需要过滤掉 注释等一些组件 或者说只能要 type等于字符串的 这个
       const defaultShowItems = props.defaultShowItems || props.num - 1;
-      const childrens = (slots.default && slots.default()) || [];
-      return childrens.slice(0, defaultShowItems) || [];
+      return childrens.value.slice(0, defaultShowItems) || [];
     });
 
     /**
@@ -52,8 +56,7 @@ const SaberQueryHeader = defineComponent({
      */
     const advancedShowSlots = computed(() => {
       const defaultShowItems = props.defaultShowItems || props.num - 1;
-      const childrens = (slots.default && slots.default()) || [];
-      return childrens.slice(defaultShowItems);
+      return childrens.value.slice(defaultShowItems);
     });
 
     /**
@@ -61,9 +64,8 @@ const SaberQueryHeader = defineComponent({
      */
     const calcSubBtnOffset = () => {
       const defaultShowItems = props.defaultShowItems || props.num - 1;
-      const childrens = (slots.default && slots.default()) || [];
       const total =
-        (advanced.value ? childrens.length + 1 : defaultShowItems) * span.value;
+        (advanced.value ? childrens.value.length + 1 : defaultShowItems) * span.value;
 
       const remainder = total % 24;
       if (total < 24 || remainder === 0) {
@@ -92,7 +94,7 @@ const SaberQueryHeader = defineComponent({
       return (
         <ElForm
           ref={formRef}
-          label-position={'right'}
+          label-position="right"
           model={model}
           labelWidth="100px"
         >

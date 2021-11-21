@@ -45,7 +45,10 @@ importers:
       '@digitforce/query-table': link:../query-table
 
   packages/query-header:
-    specifiers: {}
+    specifiers:
+      '@digitforce/vue-utils': 0.0.1
+    dependencies:
+      '@digitforce/vue-utils': link:../utils
 
   packages/query-table:
     specifiers:
@@ -54,6 +57,12 @@ importers:
       '@digitforce/table': link:../table
 
   packages/table:
+    specifiers:
+      '@digitforce/pagination': 0.0.1
+    dependencies:
+      '@digitforce/pagination': link:../pagination
+
+  packages/utils:
     specifiers:
       '@digitforce/pagination': 0.0.1
     dependencies:
