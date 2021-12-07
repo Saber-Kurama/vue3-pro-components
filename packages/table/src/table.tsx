@@ -1,8 +1,8 @@
 /*
  * @Author: Zhang Kai
  * @Date: 2021-11-04 13:55:25
- * @LastEditTime: 2021-11-11 17:45:34
- * @LastEditors: chengyanyin
+ * @LastEditTime: 2021-12-06 10:29:46
+ * @LastEditors: chenguanyin
  * @Description: 带分页的表格
  */
 
@@ -50,13 +50,11 @@ export default defineComponent({
         const newCol = { ...otherCol, key }; // 一个新的 col
         if (col.render) {
           newCol.slots = col.render;
-        }
-        // TODO: 考虑支持 slotRenderName
-        if (col.slotRenderName) {
+        } else if (col.slotRenderName) {
+          // TODO: 考虑支持 slotRenderName
           newCol.slots = { default: slots[col.slotRenderName] };
-        }
-        // 支持 prop 传参为 string[]
-        if (col.prop instanceof Array) {
+        } else if (col.prop instanceof Array) {
+          // 支持 prop 传参为 string[]
           newCol.prop = col.prop.join('.');
           newCol.slots = {
             default: ({ row }: any) => {
