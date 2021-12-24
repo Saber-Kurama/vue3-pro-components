@@ -1,0 +1,17 @@
+{
+  "name": "@digitforce/test-button",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.ts",
+  "engines": {
+    "node": ">=10",
+    "pnpm": ">=3"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@arco-design/arco-vue-scripts": "^0.2.8",
+    "vite": "^2.7.6"
+  }
+}
