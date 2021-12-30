@@ -1,9 +1,16 @@
+<!--
+ * @Author: saber
+ * @Date: 2021-12-24 19:05:33
+ * @LastEditTime: 2021-12-30 20:05:39
+ * @LastEditors: saber
+ * @Description: 
+-->
 <template>
   <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
 </template>
 
 <script>
-import './button.css';
+import './button.scss';
 import { reactive, computed } from 'vue';
 
 export default {

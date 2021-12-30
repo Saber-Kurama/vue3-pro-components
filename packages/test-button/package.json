@@ -13,6 +13,6 @@
     "build:style": "dango-vue build:style"
   },
   "devDependencies": {
-    "@dangojs/vue-scripts": "^0.0.1"
+    "@dangojs/vue-scripts": "^0.0.2"
   }
 }
