@@ -8,10 +8,11 @@
     "pnpm": ">=3"
   },
   "scripts": {
-    "build": "vite build"
+    "build":"npm run build:component && npm run build:style",
+    "build:component": "dango-vue build:component",
+    "build:style": "dango-vue build:style"
   },
   "devDependencies": {
-    "@arco-design/arco-vue-scripts": "^0.2.8",
-    "vite": "^2.7.6"
+    "@dangojs/vue-scripts": "^0.0.1"
   }
 }

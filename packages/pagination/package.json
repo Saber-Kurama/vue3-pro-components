@@ -8,5 +8,7 @@
     "pnpm": ">=3"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@dangojs/vue-scripts": "^0.0.1"
+  }
 }
