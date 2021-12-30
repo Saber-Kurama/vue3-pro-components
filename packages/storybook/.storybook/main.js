@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2021-12-22 18:45:57
- * @LastEditTime: 2021-12-30 20:53:21
+ * @LastEditTime: 2021-12-30 21:35:35
  * @LastEditors: saber
  * @Description: 
  */
@@ -29,11 +29,21 @@ module.exports = {
     // });
 
     // Return the altered config
-    console.log(' config.module.rules[4]',  config.module.rules[0].use[0].options)
+    console.log(' config.module.rules[4]',  config.module.rules[1])
     // config.module.rules[4].use[0].options.transpileOnly = false;
+    // 支持tsx
     config.module.rules[0].use[0].options.plugins.push('@vue/babel-plugin-jsx');
     // config.module.rules[0].use[1] = config.module.rules[4].use[0]; 
-    // config.module.rules[4].use[0] = config.module.rules[0].use[0] 
+    // config.module.rules[4].use[0] = config.module.rules[0].use[0]
+    // mjs 详情见https://github.com/element-plus/element-plus/issues/4132
+    config.module.rules.push({
+      test: /\.mjs$/,
+      resolve: {
+        fullySpecified: false
+      },
+      include: /node_modules/,
+      type: "javascript/auto"
+    }) 
     return config;
   },
   "framework": "@storybook/vue3",

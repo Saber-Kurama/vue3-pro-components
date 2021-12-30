@@ -2,11 +2,11 @@
  * @Author: Zhang Kai
  * @Date: 2021-10-25 17:29:24
  * @LastEditors: saber
- * @LastEditTime: 2021-11-05 12:08:21
+ * @LastEditTime: 2021-12-30 21:14:16
  * @FilePath: 
  */
 import { defineComponent, PropType, ref } from 'vue';
-import './index.scss';
+// import './index.scss';
 import { ElPagination } from 'element-plus';
 
 const Pagination = defineComponent({
