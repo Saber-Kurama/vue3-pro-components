@@ -1,12 +1,12 @@
 /*
  * @Author: saber
  * @Date: 2021-12-30 21:11:24
- * @LastEditTime: 2021-12-30 21:41:05
+ * @LastEditTime: 2021-12-31 10:37:05
  * @LastEditors: saber
  * @Description: 
  */
-import Pagination from '../../../../pagination/src';
-import '../../../../pagination/src/style';
+import Pagination from '../../../../pagination/es/index';
+import '../../../../pagination/es/style';
 // import TestButton from '../Button.vue';
 export default {
   title: 'components/Pagination 分页',

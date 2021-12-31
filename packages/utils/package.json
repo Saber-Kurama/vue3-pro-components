@@ -2,13 +2,24 @@
   "name": "@digitforce/vue-utils",
   "version": "0.0.1",
   "description": "",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "engines": {
     "node": ">=10",
     "pnpm": ">=3"
   },
-  "dependencies": {
-    "@digitforce/pagination": "0.0.1"
+  "files": [
+    "es",
+    "lib"
+  ],
+  "scripts": {
+    "build":"npm run build:component",
+    "build:component": "dango-vue build:component",
+    "build:style": "dango-vue build:style"
   },
-  "devDependencies": {}
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@dangojs/vue-scripts": "^0.0.2"
+  }
 }

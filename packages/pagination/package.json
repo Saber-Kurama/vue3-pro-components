@@ -2,13 +2,25 @@
   "name": "@digitforce/pagination",
   "version": "0.0.1",
   "description": "",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "engines": {
     "node": ">=10",
     "pnpm": ">=3"
   },
-  "dependencies": {},
+  "files": [
+    "es",
+    "lib"
+  ],
+  "scripts": {
+    "build":"npm run build:component && npm run build:style",
+    "build:component": "dango-vue build:component",
+    "build:style": "dango-vue build:style"
+  },
+  "dependencies": {
+    
+  },
   "devDependencies": {
-    "@dangojs/vue-scripts": "^0.0.1"
+    "@dangojs/vue-scripts": "^0.0.2"
   }
 }

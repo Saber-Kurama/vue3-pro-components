@@ -35,9 +35,9 @@ importers:
 
   packages/pagination:
     specifiers:
-      '@dangojs/vue-scripts': ^0.0.1
+      '@dangojs/vue-scripts': ^0.0.2
     devDependencies:
-      '@dangojs/vue-scripts': 0.0.1_vue@3.2.21
+      '@dangojs/vue-scripts': 0.0.2_vue@3.2.21
 
   packages/pro-table:
     specifiers:
@@ -1837,62 +1837,6 @@ packages:
     dependencies:
       exec-sh: 0.3.6
       minimist: 1.2.5
-    dev: true
-
-  /@dangojs/vue-scripts/0.0.1_vue@3.2.21:
-    resolution: {integrity: sha512-2ROT+M3P4ma6PHY1KMF0H+riCAbYyDRu2CMCDBUjwYJzU31O/bNSBD2Q2O+H+PVDUfdFIljkpuuEzrF560gw+w==}
-    hasBin: true
-    dependencies:
-      '@arco-design/vite-plugin-arco-vue-docs': 0.1.0_c16e5beed76eae1e36c4ed20dc6358e4
-      '@babel/core': 7.16.5
-      '@babel/parser': 7.16.6
-      '@babel/plugin-proposal-class-properties': 7.16.5_@babel+core@7.16.5
-      '@babel/plugin-syntax-dynamic-import': 7.8.3_@babel+core@7.16.5
-      '@babel/preset-env': 7.16.5_@babel+core@7.16.5
-      '@babel/preset-typescript': 7.16.5_@babel+core@7.16.5
-      '@vitejs/plugin-vue': 1.9.4_vite@2.6.13
-      '@vitejs/plugin-vue-jsx': 1.2.0
-      '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.16.5
-      autoprefixer: 10.4.0_postcss@8.4.5
-      axios: 0.21.4
-      babel-jest: 26.6.3_@babel+core@7.16.5
-      chalk: 4.1.2
-      clean-css: 5.2.2
-      commander: 8.3.0
-      comment-parser: 1.3.0
-      fast-glob: 3.2.7
-      fs-extra: 9.1.0
-      glob: 7.2.0
-      inquirer: 8.2.0
-      jest: 26.6.3
-      jsdom: 16.7.0
-      less: 4.1.2
-      moment: 2.29.1
-      nunjucks: 3.2.3
-      ora: 5.4.1
-      postcss: 8.4.5
-      rollup-plugin-terser: 7.0.2
-      sass: 1.45.1
-      svgo: 2.8.0
-      ts-jest: 26.5.6_jest@26.6.3+typescript@4.5.4
-      ts-morph: 11.0.3
-      typescript: 4.5.4
-      vite: 2.6.13_less@4.1.2+sass@1.45.1
-      vite-plugin-eslint: 1.3.0_vite@2.6.13
-      vite-svg-loader: 2.2.0
-      vue-docgen-api: 4.43.1
-      vue-jest: 5.0.0-alpha.10_50e2bccf1ace98a2d8965a3df27b4e36
-    transitivePeerDependencies:
-      - bufferutil
-      - canvas
-      - chokidar
-      - debug
-      - rollup
-      - stylus
-      - supports-color
-      - ts-node
-      - utf-8-validate
-      - vue
     dev: true
 
   /@dangojs/vue-scripts/0.0.2_vue@3.2.21:

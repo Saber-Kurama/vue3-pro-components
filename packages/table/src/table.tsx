@@ -1,8 +1,8 @@
 /*
  * @Author: Zhang Kai
  * @Date: 2021-11-04 13:55:25
- * @LastEditTime: 2021-12-06 10:29:46
- * @LastEditors: chenguanyin
+ * @LastEditTime: 2021-12-31 10:46:51
+ * @LastEditors: saber
  * @Description: 带分页的表格
  */
 
@@ -11,8 +11,7 @@ import SaberPagination from '@digitforce/pagination';
 import { PropType, toRefs } from 'vue';
 import { defineComponent } from 'vue';
 import { TableColumn } from './interface';
-//TODO： 应该有自己的域 或者名字
-import './index.scss';
+
 
 export default defineComponent({
   name: 'SaberTable',

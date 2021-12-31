@@ -2,7 +2,8 @@
   "name": "@digitforce/test-button",
   "version": "0.0.1",
   "description": "",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "engines": {
     "node": ">=10",
     "pnpm": ">=3"

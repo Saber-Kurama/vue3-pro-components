@@ -7,8 +7,15 @@
     "node": ">=10",
     "pnpm": ">=3"
   },
+  "scripts": {
+    "build":"npm run build:component && npm run build:style",
+    "build:component": "dango-vue build:component",
+    "build:style": "dango-vue build:style"
+  },
   "dependencies": {
     "@digitforce/pagination": "0.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@dangojs/vue-scripts": "^0.0.2"
+  }
 }
