@@ -21,6 +21,6 @@
     
   },
   "devDependencies": {
-    "@dangojs/vue-scripts": "^0.0.2"
+    "@dangojs/vue-scripts": "^0.0.3"
   }
 }

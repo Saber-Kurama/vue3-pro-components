@@ -33,3 +33,7 @@ pnpm-debug.log*
 # 一些构建包
 packages/**/es
 packages/**/lib
+
+# pnpm-global
+pnpm-global
+packages/**/pnpm-global

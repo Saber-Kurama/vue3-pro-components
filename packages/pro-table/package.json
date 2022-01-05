@@ -7,6 +7,9 @@
     "node": ">=10",
     "pnpm": ">=3"
   },
+  "scripts": {
+   
+  },
   "dependencies": {
     "@digitforce/query-header": "0.0.1",
     "@digitforce/query-table": "0.0.1"

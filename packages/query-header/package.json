@@ -13,14 +13,12 @@
     "lib"
   ],
   "scripts": {
-    "build":"npm run build:component && npm run build:style",
+    "build": "npm run build:component && npm run build:style",
     "build:component": "dango-vue build:component",
     "build:style": "dango-vue build:style"
   },
   "dependencies": {
+    "@dangojs/vue-scripts": "^0.0.3",
     "@digitforce/vue-utils": "0.0.1"
-  },
-  "devDependencies": {
-    "@dangojs/vue-scripts": "^0.0.2"
   }
 }

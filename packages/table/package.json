@@ -16,6 +16,6 @@
     "@digitforce/pagination": "0.0.1"
   },
   "devDependencies": {
-    "@dangojs/vue-scripts": "^0.0.2"
+    "@dangojs/vue-scripts": "^0.0.3"
   }
 }
