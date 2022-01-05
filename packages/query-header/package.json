@@ -18,7 +18,9 @@
     "build:style": "dango-vue build:style"
   },
   "dependencies": {
-    "@dangojs/vue-scripts": "^0.0.3",
+    "@dangojs/vue-scripts": "^0.0.4",
     "@digitforce/vue-utils": "0.0.1"
+  },
+  "devDependencies": {
   }
 }

@@ -9,11 +9,11 @@
     "pnpm": ">=3"
   },
   "scripts": {
-    "build":"npm run build:component && npm run build:style",
+    "build": "npm run build:component && npm run build:style",
     "build:component": "dango-vue build:component",
     "build:style": "dango-vue build:style"
   },
   "devDependencies": {
-    "@dangojs/vue-scripts": "^0.0.3"
+    "@dangojs/vue-scripts": "^0.0.4"
   }
 }

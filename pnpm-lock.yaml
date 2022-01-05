@@ -37,9 +37,9 @@ importers:
 
   packages/pagination:
     specifiers:
-      '@dangojs/vue-scripts': ^0.0.3
+      '@dangojs/vue-scripts': ^0.0.4
     devDependencies:
-      '@dangojs/vue-scripts': 0.0.3_vue@3.2.21
+      '@dangojs/vue-scripts': 0.0.4_vue@3.2.21
 
   packages/pro-table:
     specifiers:
@@ -51,20 +51,20 @@ importers:
 
   packages/query-header:
     specifiers:
-      '@dangojs/vue-scripts': ^0.0.3
+      '@dangojs/vue-scripts': ^0.0.4
       '@digitforce/vue-utils': 0.0.1
     dependencies:
-      '@dangojs/vue-scripts': 0.0.3_vue@3.2.21
+      '@dangojs/vue-scripts': 0.0.4_vue@3.2.21
       '@digitforce/vue-utils': link:../utils
 
   packages/query-table:
     specifiers:
-      '@dangojs/vue-scripts': ^0.0.3
+      '@dangojs/vue-scripts': ^0.0.4
       '@digitforce/table': 0.0.1
     dependencies:
       '@digitforce/table': link:../table
     devDependencies:
-      '@dangojs/vue-scripts': 0.0.3_vue@3.2.21
+      '@dangojs/vue-scripts': 0.0.4_vue@3.2.21
 
   packages/storybook:
     specifiers:
@@ -149,24 +149,24 @@ importers:
 
   packages/table:
     specifiers:
-      '@dangojs/vue-scripts': ^0.0.3
+      '@dangojs/vue-scripts': ^0.0.4
       '@digitforce/pagination': 0.0.1
     dependencies:
       '@digitforce/pagination': link:../pagination
     devDependencies:
-      '@dangojs/vue-scripts': 0.0.3_vue@3.2.21
+      '@dangojs/vue-scripts': 0.0.4_vue@3.2.21
 
   packages/test-button:
     specifiers:
-      '@dangojs/vue-scripts': ^0.0.3
+      '@dangojs/vue-scripts': ^0.0.4
     devDependencies:
-      '@dangojs/vue-scripts': 0.0.3_vue@3.2.21
+      '@dangojs/vue-scripts': 0.0.4_vue@3.2.21
 
   packages/utils:
     specifiers:
-      '@dangojs/vue-scripts': ^0.0.3
+      '@dangojs/vue-scripts': ^0.0.4
     devDependencies:
-      '@dangojs/vue-scripts': 0.0.3_vue@3.2.21
+      '@dangojs/vue-scripts': 0.0.4_vue@3.2.21
 
 packages:
 
@@ -1780,8 +1780,8 @@ packages:
       - vue
     dev: false
 
-  /@dangojs/vue-scripts/0.0.3_vue@3.2.21:
-    resolution: {integrity: sha512-gFBT5QylnoMynTPiQJBev59sCF+Hh28xKacZyR6qZD4OpClL5AdTQpEJdvbWjctKOZ/RisOGutQ2cY1kUaJhJw==}
+  /@dangojs/vue-scripts/0.0.4_vue@3.2.21:
+    resolution: {integrity: sha512-Z3wB09ZoTuTdtNP4NfNK22923agdYD2tELML5zkeH1OiPClLQzSd1VucH3QUvcOPwieoOJhgFKyFVnEemkrN1w==}
     hasBin: true
     dependencies:
       '@arco-design/vite-plugin-arco-vue-docs': 0.1.0_c16e5beed76eae1e36c4ed20dc6358e4
