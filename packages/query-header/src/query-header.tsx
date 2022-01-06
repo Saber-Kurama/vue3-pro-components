@@ -2,7 +2,7 @@
  * @Author: Zhang Kai
  * @Date: 2021-11-05 20:58:49
  * @LastEditors: saber
- * @LastEditTime: 2022-01-05 10:54:20
+ * @LastEditTime: 2022-01-06 17:11:07
  * @FilePath: /vue3-pro-components/packages/query-header/src/SearchForm.tsx
  */
 import { defineComponent, reactive, ref, watch, computed, watchEffect } from 'vue';
@@ -21,7 +21,7 @@ const SaberQueryHeader = defineComponent({
     /** 一行的个数 */
     num: {
       type: Number,
-      default: 3 // 默认只能是 3 或者 4
+      default: 4 // 默认只能是 3 或者 4
     },
     model: {
       type: Object,
@@ -97,6 +97,7 @@ const SaberQueryHeader = defineComponent({
           label-position="right"
           model={model}
           labelWidth="100px"
+          class="df-query-header-form"
         >
           <ElRow gutter={20}>
             {defaultShowSlots.value.map((vnode, index) => {
