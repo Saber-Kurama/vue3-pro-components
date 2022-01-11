@@ -1,6 +1,6 @@
 {
   "name": "@digitforce/table",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -14,7 +14,7 @@
     "build:style": "dango-vue build:style"
   },
   "dependencies": {
-    "@digitforce/pagination": "0.0.1"
+    "@digitforce/pagination": "0.0.2"
   },
   "devDependencies": {
     "@dangojs/vue-scripts": "^0.0.4"
