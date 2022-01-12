@@ -11,7 +11,8 @@
     "docs:build": "vuepress build docs",
     "dev": "",
     "build": "pnpm run -r --filter=!./packages/storybook build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "storybook": "pnpm run --filter=./packages/storybook storybook"
   },
   "license": "MIT",
   "dependencies": {
