@@ -1,5 +1,6 @@
 {
   "name": "vue3-storybook",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

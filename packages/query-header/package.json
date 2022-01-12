@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@dangojs/vue-scripts": "^0.0.4",
-    "@digitforce/vue-utils": "0.0.2"
+    "@digitforce/vue-utils": "workspace:^"
   },
   "devDependencies": {
   }

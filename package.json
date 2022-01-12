@@ -12,26 +12,33 @@
     "dev": "",
     "build": "pnpm run -r --filter=!./packages/storybook build",
     "serve": "vite preview",
-    "storybook": "pnpm run --filter=./packages/storybook storybook"
+    "storybook": "pnpm run --filter=./packages/storybook storybook",
+    "change": "pnpm changeset",
+    "vp": "pnpm changeset version",
+    "pub": "pnpm changeset publish",
+    "release": "pnpm changeset publish"
   },
   "license": "MIT",
   "dependencies": {
     "@dangojs/vue-scripts": "^0.0.2",
     "@digitforce/element-plus-digittheme": "^0.0.2",
-    "@digitforce/pro-table": "workspace:0.0.2",
-    "@digitforce/query-header": "workspace:0.0.2",
-    "@digitforce/query-table": "workspace:0.0.2",
+    "@digitforce/pro-table": "workspace:^",
+    "@digitforce/query-header": "workspace:^",
+    "@digitforce/query-table": "workspace:^",
     "@element-plus/icons": "^0.0.11",
     "element-plus": "^1.2.0-beta.1",
     "lodash-es": "^4.17.21",
     "vue": "^3.2.16"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.19.0",
     "@vitejs/plugin-vue": "^1.9.3",
     "@vitejs/plugin-vue-jsx": "^1.2.0",
+    "rollup": "^2.63.0",
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
     "vue-tsc": "^0.3.0",
-    "vuepress": "^2.0.0-beta.27"
+    "vuepress": "^2.0.0-beta.27",
+    "webpack": "^5.66.0"
   }
 }

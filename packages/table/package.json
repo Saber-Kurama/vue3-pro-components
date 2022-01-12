@@ -14,7 +14,7 @@
     "build:style": "dango-vue build:style"
   },
   "dependencies": {
-    "@digitforce/pagination": "0.0.2"
+    "@digitforce/pagination": "workspace:^"
   },
   "devDependencies": {
     "@dangojs/vue-scripts": "^0.0.4"

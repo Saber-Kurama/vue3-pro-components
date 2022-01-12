@@ -11,8 +11,8 @@
    
   },
   "dependencies": {
-    "@digitforce/query-header": "0.0.2",
-    "@digitforce/query-table": "0.0.2"
+    "@digitforce/query-header": "workspace:^",
+    "@digitforce/query-table": "workspace:^"
   },
   "devDependencies": {}
 }
