@@ -7,7 +7,7 @@
  */
 import { defineComponent, reactive, ref, watch, computed } from 'vue';
 import { ElForm, ElRow, ElCol, ElButton, ElIcon } from 'element-plus';
-import { ArrowDown, ArrowUp } from '@element-plus/icons';
+import { ArrowDown, ArrowUp } from '@element-plus/icons-vue';
 
 const SaberQueryHeader = defineComponent({
   name: 'SaberQueryHeader',

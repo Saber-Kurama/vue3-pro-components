@@ -1,6 +1,6 @@
 {
   "name": "@digitforce/query-header",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -21,6 +21,9 @@
     "@dangojs/vue-scripts": "^0.0.4",
     "@digitforce/vue-utils": "workspace:^"
   },
-  "devDependencies": {
+  "devDependencies": {},
+  "publishConfig": {
+    "registry": "",
+    "access": "public"
   }
 }

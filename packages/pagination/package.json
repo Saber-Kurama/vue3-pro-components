@@ -19,5 +19,9 @@
   },
   "devDependencies": {
     "@dangojs/vue-scripts": "^0.0.4"
+  },
+  "publishConfig": {
+    "registry": "",
+    "access": "public"
   }
 }

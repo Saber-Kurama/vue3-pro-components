@@ -1,18 +1,20 @@
 {
   "name": "@digitforce/pro-table",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "src/index.ts",
   "engines": {
     "node": ">=10",
     "pnpm": ">=3"
   },
-  "scripts": {
-   
-  },
+  "scripts": {},
   "dependencies": {
     "@digitforce/query-header": "workspace:^",
     "@digitforce/query-table": "workspace:^"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "publishConfig": {
+    "registry": "",
+    "access": "public"
+  }
 }

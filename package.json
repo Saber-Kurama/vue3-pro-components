@@ -25,7 +25,7 @@
     "@digitforce/pro-table": "workspace:^",
     "@digitforce/query-header": "workspace:^",
     "@digitforce/query-table": "workspace:^",
-    "@element-plus/icons": "^0.0.11",
+    "@element-plus/icons-vue": "^0.2.4",
     "element-plus": "^1.2.0-beta.1",
     "lodash-es": "^4.17.21",
     "vue": "^3.2.16"

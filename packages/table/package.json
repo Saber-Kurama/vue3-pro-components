@@ -13,6 +13,10 @@
     "build:component": "dango-vue build:component",
     "build:style": "dango-vue build:style"
   },
+  "publishConfig": {
+    "registry": "",
+    "access": "public"
+  },
   "dependencies": {
     "@digitforce/pagination": "workspace:^"
   },
