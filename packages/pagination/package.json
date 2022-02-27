@@ -18,7 +18,20 @@
     "build:style": "dango-vue build:style"
   },
   "devDependencies": {
-    "@dangojs/vue-scripts": "^0.0.4"
+    "@dangojs/vue-scripts": "^0.0.4",
+    "arco-cli": "^1.26.0",
+    "arco-cli-dev-utils": "^1.0.0",
+    "arco-cli-sync": "^1.12.2"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "arcoMeta": {
+    "type": "vue-component",
+    "title": "@digitforce/pagination",
+    "category": [
+      "数据展示"
+    ]
   },
   "publishConfig": {
     "registry": "",

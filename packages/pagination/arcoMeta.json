@@ -1,0 +1,23 @@
+{
+  "name": "@digitforce/pagination",
+  "title": "@digitforce/pagination",
+  "description": "",
+  "type": "vue-component",
+  "category": [
+    "数据展示"
+  ],
+  "group": 73,
+  "homepage": "",
+  "repository": "",
+  "author": "Saber-Kurama",
+  "screenshot": "",
+  "package": {
+    "name": "@digitforce/pagination",
+    "version": "latest",
+    "type": "npm",
+    "registry": "",
+    "peerDependencies": [
+      "vue"
+    ]
+  }
+}
